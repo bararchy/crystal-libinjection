@@ -17,17 +17,6 @@ describe "Libinjection" do
       puts "String is clear".colorize.green
     end
 
-    puts "Scanning nil data, this should raise NilData"
-    begin
-      if Libinjection::SqliScan.contains_sqli?(nil)
-        puts "SQL injection found".colorize.red
-      else
-        puts "String is clear".colorize.red
-      end
-    rescue e
-      puts e.to_s.colorize.green
-    end
-
     puts "Scanning empty data, this should raise EmptyData"
     begin
       if Libinjection::SqliScan.contains_sqli?("")
