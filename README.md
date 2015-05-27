@@ -1,6 +1,7 @@
 # crystal-libinjection
 
-TODO: Write a description here for library
+Crystal binding around client9 [libinjection](https://github.com/client9/libinjection)
+
 
 ## Installation
 
@@ -16,13 +17,29 @@ end
 
 ```crystal
 require "crystal-libinjection"
-```
 
-TODO: Write usage here for library
+# Pass a string to the module, and check if the string contains SQL Injections
+
+test = Libinjection::SqliScan.string("Hello")
+if test == 0
+  puts "No Injection".colorize.green
+elsif test == 1
+  puts "Injection".colorize.red
+end
+
+test = Libinjection::SqliScan.string("Hello' OR 'a'='a' --DROP TABLE")
+if test == 0
+  puts "No Injection".colorize.red
+elsif test == 1
+  puts "Injection".colorize.green
+end
+
+```
 
 ## Development
 
-TODO: Write instructions for development
+* Add instructions on how to compile libinjection from sources
+* Add a script to update it 
 
 ## Contributing
 
