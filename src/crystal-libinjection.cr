@@ -7,9 +7,9 @@ module Libinjection
     def self.string(data)
       raise "NilString" if data.nil?
       raise "EmptyString" if data.empty?
-      ptr = Pointer(Void).malloc(1024)
-      Lib_injection.libinjection_init(ptr, data, data.bytesize, 0)
-      Lib_injection.libinjection_is_sqli?(ptr)
+      sfilter :: Lib_injection::SFilter
+      Lib_injection.libinjection_init(pointerof(sfilter), data, data.bytesize, 0)
+      Lib_injection.libinjection_is_sqli?(pointerof(sfilter))
     end
   end
 end
