@@ -20,26 +20,24 @@ require "crystal-libinjection"
 
 # Pass a string to the module, and check if the string contains SQL Injections
 
-test = Libinjection::SqliScan.string("Hello")
-if test == 0
-  puts "No Injection".colorize.green
-elsif test == 1
-  puts "Injection".colorize.red
+if Libinjection::SqliScan.contains_sqli?(user_request)
+  puts "SQL injection found".colorize.green
+else
+  puts "String is clear".colorize.green
 end
+```
+```crystal
+user_request = "Hello Just Testing"
+=> String is clear
 
-test = Libinjection::SqliScan.string("Hello' OR 'a'='a' --DROP TABLE")
-if test == 0
-  puts "No Injection".colorize.red
-elsif test == 1
-  puts "Injection".colorize.green
-end
-
+user_request = "Hello' OR 'a' = 'a' --DROP TABLE"
+=> SQL injection found
 ```
 
 ## Development
 
 * Add instructions on how to compile libinjection from sources
-* Add a script to update it 
+* Add a script to update it
 
 ## Contributing
 
