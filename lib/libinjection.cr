@@ -1,4 +1,4 @@
-@[Link(ldflags: "-L../ext/libinjection.so")]
+@[Link(ldflags: "-L../ext/libinjection.so -linjection")]
 lib Lib_injection
   alias Sfilter = Void*
 
