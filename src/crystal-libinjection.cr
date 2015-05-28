@@ -1,4 +1,4 @@
-require "libinjection.cr"
+require "./libinjection.cr"
 
 module Libinjection
 
