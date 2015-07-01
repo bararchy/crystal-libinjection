@@ -1,4 +1,4 @@
-@[Link(ldflags: "-L../ext/libinjection.so -linjection")]
+@[Link("injection")]
 lib Lib_injection
 
   struct SFilter

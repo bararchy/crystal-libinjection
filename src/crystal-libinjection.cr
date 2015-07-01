@@ -1,4 +1,4 @@
-require "./libinjection.cr"
+require "./crystal-libinjection/**"
 
 module Libinjection
 
