@@ -2,6 +2,7 @@
 
 Crystal binding around client9 [libinjection](https://github.com/client9/libinjection)
 
+[![docrystal.org](http://www.docrystal.org/badge.svg)](http://www.docrystal.org/github.com/bararchy/crystal-libinjection)
 
 ## Installation
 
